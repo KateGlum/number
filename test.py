@@ -28,6 +28,5 @@ class Test(unittest.TestCase):
     def test_normnumber(self):
         self.assertTrue(factor(42))
 
-
 if __name__ == '__main__':
     unittest.main()
