@@ -1,0 +1,19 @@
+body {
+    background-image: url('/image/green.jpg');
+}
+
+h1, h2 {
+    font-family: Open Sans, PT Sans, Roboto;
+}
+
+.main {
+    padding-left: 60px;
+}
+
+.button {
+    border-radius: 3px;
+    background-color: #107303;
+    border-color: #107303;
+    font: 12px Open Sans, PT Sans, Roboto;
+    font-weight: 600;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8">
+    <title>Разложение числа множители</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" type="text/javascript"></script>
+    <script src="/static/jquery-2.2.3.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div class="main">
+    <h1>Введите число</h1>
+
+<script>
+    $(function() {
+        var $form = $('#form');
+        $form.on('submit', function() {
+        <!-- POST запрос jquery -->
+            $.post('/cgi-bin/factor.py', {
+            <!-- параметры, которые хотим передать в POST -->
+                number: $form.find('[name=number]').val()
+            }, function(response) {
+            <!-- результат в div с классом result -->
+                $('.result').html(response);
+            });
+            return false;
+        });
+    });
+</script>
+    <form id="form">
+        <input type="text" name="number" />
+        <input type="submit" class="button" value="Разложить на множители" />
+    </form>
+      <h2>Ответ: </h2>
+    <div class="result"></div>
+  </div>
+</body>
+</html>
